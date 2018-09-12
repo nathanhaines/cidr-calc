@@ -1,0 +1,38 @@
+name: cidr-calc
+version: '1.0'
+summary: A simple CIDR Network Calculator to help you calculate IPv4 subnet masks.
+description: |
+  A simple CIDR Network Calculator to help you calculate IPv4 subnet masks.  
+  CIDR stands for "Classless Inter-Domain Routing", and represents the preferred
+  method of carving up IPV4 networks for the last 15 years.
+
+  This calculator was built from the ground up for trial and error and "what if"
+  usage. It was made assuming you have a "history" command so you can recall the
+  preceding command with the uparrow key and modify the preceding command as
+  needed. So start with the bottom-most IP address you want to cover, and keep
+  adjusting the maskbits figure (the number after the slash), until you cover
+  all the IP addresses you want.
+
+  To use this calculator to find a small IP address group containing addresses
+  between 192.168.47.21 and 192.168.47.67, issue the following command:
+
+  cidr-calc  192.168.47.21/24
+
+  This calculator was deliberately made to be easily used with trial and error,
+  so you can get the range you want to get.
+
+grade: stable
+confinement: strict
+architectures: [ all ]
+
+apps:
+  cidr-calc:
+    command: cidr-calc
+
+parts:
+  cidr-calc:
+    plugin: dump
+    organize:
+      cidr-calc.py: usr/bin/cidr-calc
+    prime:
+      - usr

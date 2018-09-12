@@ -31,9 +31,9 @@ import sys
 import string
 
 def usage():
-    print('USAGE: subnet_calc  ipaddr/maskbits',
+    print('USAGE: cidr-calc  ipaddr/maskbits',
             file=sys.stderr)
-    print(' EXAMPLE: subnet_calc  192.168.100.128/28',
+    print(' EXAMPLE: cidr-calc  192.168.100.128/28',
             file=sys.stderr)
 
 
